@@ -26,12 +26,15 @@ html {
 body {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
   color: var(--text);
   background:
     radial-gradient(circle at top right, rgba(249, 115, 22, 0.18), transparent 28%),
     radial-gradient(circle at left 20%, rgba(17, 36, 58, 0.08), transparent 26%),
     linear-gradient(180deg, #fbf7f1 0%, var(--bg) 100%);
   line-height: 1.75;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -121,7 +124,8 @@ select {
 .site-nav a {
   padding: 10px 14px;
   border-radius: 999px;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
+  font-weight: 600;
   color: var(--text-muted);
   transition: background-color 180ms ease, color 180ms ease;
 }
@@ -194,9 +198,10 @@ select {
 }
 
 .hero-grid {
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  grid-template-columns: minmax(0, 1.28fr) minmax(320px, 0.72fr);
   align-items: center;
   min-height: calc(100vh - 120px);
+  gap: 40px;
 }
 
 .hero-copy h1,
@@ -208,11 +213,13 @@ select {
   margin: 0;
   line-height: 1.1;
   letter-spacing: -0.03em;
+  text-wrap: balance;
 }
 
 .hero-copy h1 {
-  font-size: clamp(3rem, 6vw, 5.8rem);
-  max-width: 10ch;
+  font-size: clamp(2.7rem, 4.8vw, 4.7rem);
+  line-height: 1.04;
+  max-width: 13.5ch;
 }
 
 .sub-hero h1,
@@ -220,14 +227,14 @@ select {
 .split-layout h2,
 .message-body h2,
 .cta-panel h2 {
-  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-size: clamp(2.05rem, 3.4vw, 3rem);
 }
 
 .eyebrow {
   margin: 0 0 10px;
   color: var(--orange-deep);
   font-family: "Bebas Neue", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.04rem;
   letter-spacing: 0.16em;
 }
 
@@ -235,12 +242,12 @@ select {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 7px 12px;
+  padding: 8px 14px;
   margin-bottom: 18px;
   border-radius: 999px;
   background: rgba(249, 115, 22, 0.14);
   color: var(--orange-deep);
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   font-weight: 700;
 }
 
@@ -261,6 +268,14 @@ select {
 .profile-card p {
   margin: 0;
   color: var(--text-muted);
+  font-size: clamp(1rem, 0.95rem + 0.18vw, 1.06rem);
+  line-height: 1.92;
+}
+
+.lead {
+  font-size: clamp(1.08rem, 1rem + 0.35vw, 1.18rem);
+  line-height: 1.95;
+  max-width: 62ch;
 }
 
 .hero-actions,
@@ -275,10 +290,11 @@ select {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 52px;
-  padding: 0 22px;
+  min-height: 56px;
+  padding: 0 24px;
   border-radius: 999px;
-  font-weight: 700;
+  font-size: 0.98rem;
+  font-weight: 800;
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
@@ -310,6 +326,8 @@ select {
   padding-left: 22px;
   color: var(--text);
   font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.8;
 }
 
 .hero-points li::before {
@@ -365,7 +383,7 @@ select {
   margin: 0 0 18px;
   color: var(--navy);
   font-family: "Bebas Neue", sans-serif;
-  font-size: 1.7rem;
+  font-size: 1.85rem;
   letter-spacing: 0.08em;
 }
 
@@ -376,7 +394,7 @@ select {
 }
 
 .score-grid article {
-  padding: 18px;
+  padding: 20px;
   border-radius: 18px;
   background: rgba(17, 36, 58, 0.06);
 }
@@ -393,6 +411,7 @@ select {
 .score-grid span {
   color: var(--navy);
   font-weight: 700;
+  font-size: 1rem;
   line-height: 1.45;
 }
 
@@ -439,7 +458,7 @@ select {
 .court-card strong {
   margin: 12px 0;
   font-family: "Bebas Neue", sans-serif;
-  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  font-size: clamp(2.45rem, 5vw, 4.15rem);
   line-height: 0.95;
 }
 
@@ -513,6 +532,13 @@ select {
 .profile-card h3 {
   margin: 14px 0 10px;
   line-height: 1.25;
+  font-size: clamp(1.18rem, 1.05rem + 0.35vw, 1.34rem);
+}
+
+.page-card strong {
+  display: block;
+  color: var(--navy);
+  font-weight: 800;
 }
 
 .page-card {
@@ -549,7 +575,7 @@ select {
 .profile-card strong {
   display: block;
   margin: 12px 0 8px;
-  font-size: 1.4rem;
+  font-size: 1.48rem;
   color: var(--navy);
 }
 
@@ -574,7 +600,7 @@ select {
 .mini-note,
 .disclaimer,
 .coach-meta {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
 }
 
@@ -599,7 +625,7 @@ select {
 .quote-panel blockquote {
   margin: 12px auto 26px;
   max-width: 18ch;
-  font-size: clamp(1.6rem, 4vw, 3rem);
+  font-size: clamp(1.75rem, 3.6vw, 2.75rem);
   line-height: 1.2;
   color: var(--navy);
   font-weight: 800;
@@ -631,6 +657,15 @@ select {
 
 .footer-title {
   color: var(--navy);
+  margin: 0 0 8px;
+  font-size: 1.03rem;
+  font-weight: 800;
+}
+
+.testimonial-card strong {
+  display: block;
+  margin-top: 14px;
+  font-size: 0.98rem;
 }
 
 .footer-copy {
@@ -661,6 +696,10 @@ select {
 }
 
 @media (max-width: 760px) {
+  .container {
+    width: min(1120px, calc(100% - 28px));
+  }
+
   .site-nav {
     position: absolute;
     top: calc(100% + 10px);
@@ -679,6 +718,11 @@ select {
 
   .site-nav.is-open {
     display: flex;
+  }
+
+  .site-nav a {
+    padding: 12px 14px;
+    font-size: 1rem;
   }
 
   .menu-toggle {
@@ -700,6 +744,16 @@ select {
 
   .hero-copy h1 {
     max-width: none;
+    font-size: clamp(2.05rem, 10.2vw, 3.05rem);
+    line-height: 1.1;
+  }
+
+  .sub-hero h1,
+  .section-heading h2,
+  .split-layout h2,
+  .message-body h2,
+  .cta-panel h2 {
+    font-size: clamp(1.82rem, 7.4vw, 2.36rem);
   }
 
   .coach-grid,
@@ -714,7 +768,7 @@ select {
   }
 
   .section {
-    padding: 64px 0;
+    padding: 58px 0;
   }
 
   .score-card,
@@ -737,6 +791,17 @@ select {
     gap: 16px;
   }
 
+  .hero-actions,
+  .cta-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions .button,
+  .cta-actions .button {
+    width: 100%;
+  }
+
   .brand {
     flex: 1 1 auto;
     gap: 10px;
@@ -751,11 +816,31 @@ select {
   }
 
   .brand-text strong {
-    font-size: 0.82rem;
+    font-size: 0.86rem;
     line-height: 1.2;
   }
 
   .brand-text small {
     display: none;
+  }
+
+  .lead,
+  .sub-hero p,
+  .stack-text p,
+  .footer-inner p,
+  .program-card p,
+  .info-card p,
+  .testimonial-card p,
+  .coach-card p,
+  .faq-list p,
+  .timeline p,
+  .feature-card p,
+  .page-card p,
+  .cta-panel p,
+  .message-body p,
+  .profile-card p,
+  .hero-points li {
+    font-size: 1rem;
+    line-height: 1.85;
   }
 }
