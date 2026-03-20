@@ -1,4 +1,5 @@
 const REALM = "Sample Portal";
+const PUBLIC_SLUGS = ["basketball-association"];
 
 function unauthorized() {
   return new Response("Authentication required.", {
@@ -31,13 +32,34 @@ function parseBasicAuth(header) {
   }
 }
 
+function isIndexPath(pathname) {
+  return pathname === "/" || pathname === "/index.html";
+}
+
+function isAllowedPublicPath(pathname) {
+  return PUBLIC_SLUGS.some(
+    (slug) => pathname === `/${slug}` || pathname.startsWith(`/${slug}/`)
+  );
+}
+
 export async function onRequest(context) {
+  const { pathname } = new URL(context.request.url);
   const expectedUser = context.env.BASIC_AUTH_USER;
   const expectedPass = context.env.BASIC_AUTH_PASS;
 
   if (!expectedUser || !expectedPass) {
     return new Response("BASIC auth secrets are not configured.", {
       status: 500
+    });
+  }
+
+  if (isAllowedPublicPath(pathname)) {
+    return context.next();
+  }
+
+  if (!isIndexPath(pathname)) {
+    return new Response("Not Found", {
+      status: 404
     });
   }
 

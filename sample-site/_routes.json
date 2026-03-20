@@ -1,8 +1,7 @@
 {
   "version": 1,
   "include": [
-    "/portal",
-    "/portal/*"
+    "/*"
   ],
   "exclude": []
 }
