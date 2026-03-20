@@ -15,11 +15,6 @@
 - 一覧ページ: `/`
 - 案件ページ: `/<slug>/`
 
-## 認証方針
-- 一覧ページ `/` と `/index.html` のみ `sample-site/functions/_middleware.js` で BASIC 認証
-- Cloudflare Pages の Secrets に `BASIC_AUTH_USER` と `BASIC_AUTH_PASS` を設定して運用
-- 公開するサンプルのスラッグは `sample-site/functions/_middleware.js` の `PUBLIC_SLUGS` に追加して管理
-
 ## 現在の公開サンプル
 - `/basketball-association/`
 
