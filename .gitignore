@@ -11,3 +11,5 @@ dist/
 
 *.log
 *_preview*.png
+.dev.vars
+.dev.vars.*

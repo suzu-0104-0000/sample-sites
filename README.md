@@ -12,8 +12,12 @@
 - Framework preset: `None`
 
 ## 公開URL方針
-- 一覧ページ: `/`
+- 一覧ページ: `/portal/`
 - 案件ページ: `/<slug>/`
+
+## 認証方針
+- 一覧ページは `sample-site/functions/_middleware.js` で BASIC 認証
+- Cloudflare Pages の Secrets に `BASIC_AUTH_USER` と `BASIC_AUTH_PASS` を設定して運用
 
 ## 現在の公開サンプル
 - `/basketball-association/`
