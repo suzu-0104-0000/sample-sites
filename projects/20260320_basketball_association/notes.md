@@ -4,6 +4,7 @@
 - クラウドワークス案件概要をもとに作成した提案用サンプルサイト
 - 一般社団法人の簡易サイトを想定した5ページ構成
 - 静的 HTML / CSS / JavaScript のみで実装
+- 公開用ファイルは `sample-site/basketball-association` 配下に配置
 
 ## ページ構成
 - `index.html`: トップページ
@@ -12,11 +13,15 @@
 - `voices.html`: 参加者の声
 - `coaches.html`: 認定コーチ一覧
 
+## 公開パス
+- Cloudflare Pages の Root directory は `sample-site`
+- 本案件の公開URLパスは `/basketball-association/`
+
 ## 前提メモ
 - 実在の団体名や正式ロゴがないため、団体名は仮置き
 - 参加者の声、代表プロフィール、コーチ情報は提案用のダミー表現
 - 画像素材が未確定のため、テキストと配色で成立するレイアウトを優先
-- Cloudflare Pages では本案件ディレクトリを Root directory に指定して運用する想定
+- 公開対象と案件管理を分離し、案件メモは `projects` 側で管理する
 
 ## 次に詰めると良い項目
 - 正式な団体名と代表者名

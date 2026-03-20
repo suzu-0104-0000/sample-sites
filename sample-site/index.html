@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample Sites Index</title>
+  <meta name="description" content="提案用サンプルサイトの一覧ページです。">
+  <style>
+    :root {
+      --bg: #f4efe7;
+      --surface: rgba(255, 248, 239, 0.9);
+      --line: rgba(12, 36, 62, 0.12);
+      --text: #152033;
+      --muted: #5d6778;
+      --navy: #11243a;
+      --orange: #f97316;
+      --shadow: 0 20px 45px rgba(17, 36, 58, 0.12);
+      --container: min(1080px, calc(100% - 40px));
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background:
+        radial-gradient(circle at top right, rgba(249, 115, 22, 0.18), transparent 25%),
+        linear-gradient(180deg, #fbf7f1 0%, var(--bg) 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 72px 0 40px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--orange);
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2 {
+      margin: 0;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      max-width: 10ch;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin-top: 18px;
+    }
+
+    .section {
+      padding: 32px 0 80px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      display: block;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(249, 115, 22, 0.35);
+    }
+
+    .card .slug {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(249, 115, 22, 0.12);
+      color: #d85a00;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .card h2 {
+      margin-top: 14px;
+    }
+
+    .card p {
+      margin-top: 10px;
+    }
+
+    .url {
+      margin-top: 14px;
+      color: var(--navy);
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .footer {
+      padding: 24px 0 40px;
+      border-top: 1px solid rgba(17, 36, 58, 0.08);
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding-top: 52px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 22px;
+      }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Sample Sites</p>
+        <h1>提案用サンプルサイトの公開一覧</h1>
+        <p>
+          Cloudflare Pages では `sample-site` を公開ルートにし、
+          各案件をサブディレクトリURLで管理する想定です。将来的にはこの一覧ページ自体を保護対象にできます。
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid">
+          <a class="card" href="basketball-association/">
+            <span class="slug">/basketball-association/</span>
+            <h2>バスケットボール協会サイト案</h2>
+            <p>
+              一般社団法人の簡易サイトを想定した5ページ構成の提案用サンプルです。
+              活動紹介、代表メッセージ、参加者の声、認定コーチ一覧を含みます。
+            </p>
+            <p class="url">Open: ./basketball-association/</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Proposal sample index. 一覧ページは将来的に Access または BASIC 認証で保護可能です。</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,15 +1,22 @@
 # sample-sites
 
-クラウドワークス応募用の提案サンプルサイトを案件単位で管理するリポジトリです。
+クラウドワークス応募用の提案サンプルサイトを管理するリポジトリです。
 
-## 現在の案件
-- `projects/20260320_basketball_association`
+## ディレクトリ方針
+- `sample-site/`: Cloudflare Pages の公開ルート
+- `projects/`: 案件ごとのメモ、管理情報、内部ID管理
 
-## 公開対象
-Cloudflare Pages では、案件ごとに `projects/<案件ID>` を `Root directory` に指定して公開します。
+## Cloudflare Pages 設定
+- Root directory: `sample-site`
+- Build command: 空欄
+- Framework preset: `None`
 
-今回の公開対象:
-- `projects/20260320_basketball_association`
+## 公開URL方針
+- 一覧ページ: `/`
+- 案件ページ: `/<slug>/`
+
+## 現在の公開サンプル
+- `/basketball-association/`
 
 ## 補足
 - サイト本体は静的 HTML / CSS / JavaScript で構成

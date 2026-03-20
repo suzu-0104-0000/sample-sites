@@ -5,6 +5,8 @@
   "site_type": "association",
   "stack": "static-html-css-js",
   "source": "クラウドワークス案件概要をもとにした提案用サンプル",
+  "public_slug": "basketball-association",
+  "public_path": "/basketball-association/",
   "pages": [
     "index.html",
     "about.html",
@@ -13,12 +15,14 @@
     "coaches.html"
   ],
   "deployment": {
-    "root_directory": "projects/20260320_basketball_association",
+    "root_directory": "sample-site",
+    "entry_directory": "sample-site/basketball-association",
     "build_command": "",
     "output_directory": ""
   },
   "notes": [
     "プロフィールや参加者の声はダミー表現を含む",
-    "ビルド不要でそのまま静的公開できる構成"
+    "ビルド不要でそのまま静的公開できる構成",
+    "Cloudflare Pages では sample-site をルートにしてパス配下で複数案件を管理する"
   ]
 }
