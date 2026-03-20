@@ -1,0 +1,24 @@
+{
+  "internal_id": "20260320_basketball_association",
+  "display_name": "バスケットボール協会サイト案",
+  "created_at": "2026-03-20",
+  "site_type": "association",
+  "stack": "static-html-css-js",
+  "source": "クラウドワークス案件概要をもとにした提案用サンプル",
+  "pages": [
+    "index.html",
+    "about.html",
+    "message.html",
+    "voices.html",
+    "coaches.html"
+  ],
+  "deployment": {
+    "root_directory": "projects/20260320_basketball_association",
+    "build_command": "",
+    "output_directory": ""
+  },
+  "notes": [
+    "プロフィールや参加者の声はダミー表現を含む",
+    "ビルド不要でそのまま静的公開できる構成"
+  ]
+}

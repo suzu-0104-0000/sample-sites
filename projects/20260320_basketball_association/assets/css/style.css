@@ -1,0 +1,761 @@
+:root {
+  --bg: #f4efe7;
+  --surface: rgba(255, 248, 239, 0.86);
+  --line: rgba(12, 36, 62, 0.12);
+  --text: #152033;
+  --text-muted: #5d6778;
+  --navy: #11243a;
+  --navy-soft: #1f3b5b;
+  --orange: #f97316;
+  --orange-deep: #d85a00;
+  --shadow: 0 20px 45px rgba(17, 36, 58, 0.12);
+  --radius-lg: 28px;
+  --container: min(1120px, calc(100% - 40px));
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(249, 115, 22, 0.18), transparent 28%),
+    radial-gradient(circle at left 20%, rgba(17, 36, 58, 0.08), transparent 26%),
+    linear-gradient(180deg, #fbf7f1 0%, var(--bg) 100%);
+  line-height: 1.75;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.container {
+  width: var(--container);
+  margin: 0 auto;
+}
+
+.site-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(18px);
+  background: rgba(251, 247, 241, 0.8);
+  border-bottom: 1px solid rgba(17, 36, 58, 0.07);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px 0;
+  position: relative;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, var(--orange) 0%, #ff9f59 100%);
+  color: #fff;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.75rem;
+  letter-spacing: 0.08em;
+  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.35);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.brand-text strong {
+  font-size: 0.98rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.brand-text small {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-nav a {
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.site-nav a:hover,
+.site-nav a.is-active {
+  background: rgba(17, 36, 58, 0.08);
+  color: var(--navy);
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: var(--navy);
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  padding: 12px;
+  cursor: pointer;
+  flex: 0 0 48px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: #fff;
+  margin: 5px 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hero,
+.sub-hero {
+  position: relative;
+  padding: 56px 0 32px;
+}
+
+.hero::before,
+.sub-hero::before {
+  content: "";
+  position: absolute;
+  inset: 28px 18px auto auto;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(249, 115, 22, 0.18) 0%, rgba(249, 115, 22, 0.06) 45%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-grid,
+.sub-hero-inner,
+.split-layout,
+.message-layout,
+.footer-inner,
+.cta-panel {
+  display: grid;
+  gap: 32px;
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  align-items: center;
+  min-height: calc(100vh - 120px);
+}
+
+.hero-copy h1,
+.sub-hero h1,
+.section-heading h2,
+.split-layout h2,
+.message-body h2,
+.cta-panel h2 {
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.hero-copy h1 {
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  max-width: 10ch;
+}
+
+.sub-hero h1,
+.section-heading h2,
+.split-layout h2,
+.message-body h2,
+.cta-panel h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--orange-deep);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.16em;
+}
+
+.sample-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: rgba(249, 115, 22, 0.14);
+  color: var(--orange-deep);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.lead,
+.sub-hero p,
+.stack-text p,
+.footer-inner p,
+.program-card p,
+.info-card p,
+.testimonial-card p,
+.coach-card p,
+.faq-list p,
+.timeline p,
+.feature-card p,
+.page-card p,
+.cta-panel p,
+.message-body p,
+.profile-card p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.hero-actions,
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: linear-gradient(135deg, var(--orange) 0%, #ff8f3d 100%);
+  color: #fff;
+  box-shadow: 0 14px 28px rgba(249, 115, 22, 0.28);
+}
+
+.button-secondary {
+  background: rgba(17, 36, 58, 0.08);
+  color: var(--navy);
+}
+
+.hero-points {
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.hero-points li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.hero-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+.hero-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.score-card,
+.court-card,
+.feature-card,
+.program-card,
+.page-card,
+.info-card,
+.testimonial-card,
+.coach-card,
+.profile-card,
+.faq-list article,
+.timeline article,
+.quote-panel,
+.cta-panel {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.score-card,
+.feature-card,
+.program-card,
+.page-card,
+.info-card,
+.testimonial-card,
+.coach-card,
+.profile-card,
+.faq-list article,
+.timeline article {
+  padding: 26px;
+}
+
+.score-heading {
+  margin: 0 0 18px;
+  color: var(--navy);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.7rem;
+  letter-spacing: 0.08em;
+}
+
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.score-grid article {
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(17, 36, 58, 0.06);
+}
+
+.score-grid strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--orange-deep);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.9rem;
+  letter-spacing: 0.08em;
+}
+
+.score-grid span {
+  color: var(--navy);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.court-card {
+  padding: 28px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background:
+    linear-gradient(180deg, rgba(17, 36, 58, 0.02), rgba(17, 36, 58, 0.2)),
+    linear-gradient(145deg, #1d3654 0%, #122135 100%);
+  color: #fff;
+  overflow: hidden;
+}
+
+.court-card::before,
+.court-card::after {
+  content: "";
+  position: absolute;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+}
+
+.court-card::before {
+  width: 360px;
+  height: 360px;
+  right: -110px;
+  top: -110px;
+}
+
+.court-card::after {
+  width: 220px;
+  height: 220px;
+  left: -90px;
+  bottom: -90px;
+}
+
+.court-card p,
+.court-card span {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.court-card strong {
+  margin: 12px 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  line-height: 0.95;
+}
+
+.section {
+  padding: 84px 0;
+}
+
+.section-contrast {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(17, 36, 58, 0.03));
+}
+
+.section-heading {
+  margin-bottom: 28px;
+}
+
+.card-grid,
+.program-grid,
+.coach-grid,
+.testimonial-grid,
+.timeline,
+.faq-list {
+  display: grid;
+  gap: 22px;
+}
+
+.card-grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card-grid.four,
+.program-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.coach-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.testimonial-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.timeline {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.feature-number,
+.page-card span,
+.timeline span,
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(249, 115, 22, 0.12);
+  color: var(--orange-deep);
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.feature-card h3,
+.program-card h3,
+.page-card strong,
+.info-card h3,
+.testimonial-card h3,
+.coach-card h3,
+.faq-list h3,
+.timeline h3,
+.profile-card h3 {
+  margin: 14px 0 10px;
+  line-height: 1.25;
+}
+
+.page-card {
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.page-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(249, 115, 22, 0.35);
+}
+
+.split-layout {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  margin-bottom: 28px;
+}
+
+.stack-text,
+.message-body {
+  display: grid;
+  gap: 18px;
+}
+
+.message-layout {
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  align-items: start;
+}
+
+.profile-card {
+  position: sticky;
+  top: 96px;
+}
+
+.profile-card strong {
+  display: block;
+  margin: 12px 0 8px;
+  font-size: 1.4rem;
+  color: var(--navy);
+}
+
+.tag-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag-list li {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(17, 36, 58, 0.08);
+  color: var(--navy);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.mini-note,
+.disclaimer,
+.coach-meta {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.coach-avatar {
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 22px;
+  background: linear-gradient(145deg, var(--navy-soft) 0%, var(--navy) 100%);
+  color: #fff;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+}
+
+.quote-panel {
+  padding: 36px;
+  text-align: center;
+}
+
+.quote-panel blockquote {
+  margin: 12px auto 26px;
+  max-width: 18ch;
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  line-height: 1.2;
+  color: var(--navy);
+  font-weight: 800;
+}
+
+.cta-section {
+  padding-top: 24px;
+}
+
+.cta-panel {
+  grid-template-columns: minmax(0, 1.2fr) auto;
+  align-items: center;
+  padding: 34px;
+  background:
+    linear-gradient(135deg, rgba(249, 115, 22, 0.14), rgba(17, 36, 58, 0.06)),
+    rgba(255, 248, 239, 0.88);
+}
+
+.site-footer {
+  padding: 30px 0 44px;
+}
+
+.footer-inner {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  padding-top: 20px;
+  border-top: 1px solid rgba(17, 36, 58, 0.09);
+}
+
+.footer-title {
+  color: var(--navy);
+}
+
+.footer-copy {
+  white-space: nowrap;
+}
+
+@media (max-width: 1080px) {
+  .hero-grid,
+  .sub-hero-inner,
+  .split-layout,
+  .message-layout,
+  .cta-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card {
+    position: static;
+  }
+
+  .coach-grid,
+  .testimonial-grid,
+  .timeline,
+  .card-grid.three,
+  .card-grid.four,
+  .program-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .site-nav {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 20px;
+    left: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: rgba(255, 248, 239, 0.98);
+    box-shadow: var(--shadow);
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .brand-text strong {
+    white-space: normal;
+  }
+
+  .hero,
+  .sub-hero {
+    padding-top: 28px;
+  }
+
+  .hero-grid {
+    min-height: auto;
+  }
+
+  .hero-copy h1 {
+    max-width: none;
+  }
+
+  .coach-grid,
+  .testimonial-grid,
+  .timeline,
+  .card-grid.three,
+  .card-grid.four,
+  .program-grid,
+  .score-grid,
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .score-card,
+  .court-card,
+  .feature-card,
+  .program-card,
+  .page-card,
+  .info-card,
+  .testimonial-card,
+  .coach-card,
+  .profile-card,
+  .faq-list article,
+  .timeline article,
+  .quote-panel,
+  .cta-panel {
+    padding: 22px;
+  }
+
+  .header-inner {
+    gap: 16px;
+  }
+
+  .brand {
+    flex: 1 1 auto;
+    gap: 10px;
+    max-width: calc(100% - 64px);
+  }
+
+  .brand-mark {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    font-size: 1.5rem;
+  }
+
+  .brand-text strong {
+    font-size: 0.82rem;
+    line-height: 1.2;
+  }
+
+  .brand-text small {
+    display: none;
+  }
+}
