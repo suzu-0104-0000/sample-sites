@@ -15,8 +15,8 @@
       <a class="brand" href="./index.html" aria-label="トップページへ戻る">
         <span class="brand-mark">MS</span>
         <span class="brand-copy">
-          <strong>医療系学会ポータル提案デモ</strong>
-          <small>Medical Society Auth Demo</small>
+          <strong>医療学会会員サイトデモ</strong>
+          <small>Proposal Sample</small>
         </span>
       </a>
 
@@ -27,7 +27,7 @@
         <a href="./login.html">会員ログイン</a>
       </nav>
 
-      <a class="button button-primary button-sm" data-auth-cta href="./login.html">会員専用ページはこちら</a>
+      <a class="button button-primary button-sm" data-auth-cta href="./login.html">会員ページへ</a>
     </div>
   </header>
 
@@ -36,30 +36,29 @@
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">Proposal Sample / Static HTML Demo</p>
-          <h1>医療系学会サイトらしい信頼感と、<br>会員認証導線の分かりやすさを両立する提案デモ</h1>
+          <h1>医療学会サイトらしい信頼感と、<br>会員導線の分かりやすさを見せる提案デモ</h1>
           <p class="lead">
-            外部認証API連携を前提とした会員ログイン、会員専用ページへの遷移、
-            保護ページの雰囲気を、公開しやすい静的HTML/CSS/JavaScriptで整理したサンプルです。
+            公開トップ・ログイン・会員専用ページの3画面で、
+            会員サイトらしい導線と雰囲気を分かりやすくまとめたサンプルです。
           </p>
 
           <div class="hero-actions">
             <a class="button button-primary" href="./login.html">会員ログインを見る</a>
-            <a class="button button-outline" data-auth-cta href="./login.html">会員専用ページはこちら</a>
+            <a class="button button-outline" data-auth-cta href="./login.html">会員ページへ</a>
           </div>
 
           <ul class="check-list">
-            <li>一般公開トップから会員導線へ自然に誘導</li>
-            <li>外部認証API連携とセッション管理を想定したUI設計</li>
-            <li>WordPressへの組み込みイメージが伝わる整然とした情報設計</li>
+            <li>一般公開トップから迷いにくい会員導線</li>
+            <li>会員制サイトらしい整ったUI</li>
+            <li>スマホでも見やすいレスポンシブ構成</li>
           </ul>
         </div>
 
         <aside class="hero-panel">
           <span class="badge badge-soft" data-auth-status>一般公開ページ</span>
-          <h2>今回の見せ方</h2>
+          <h2>このデモで見せること</h2>
           <p>
-            「公開トップ」「ログイン画面」「会員専用ページ」を分けて見せることで、
-            案件の中心となる認証導線と閲覧制御の理解が伝わる構成にしています。
+            医療系サイトらしい清潔感と、会員ページへの自然な導線を短く整理しています。
           </p>
 
           <div class="metric-stack">
@@ -85,7 +84,7 @@
         <div class="section-heading">
           <p class="eyebrow">Overview</p>
           <h2>医療学会サイトとしての基本情報</h2>
-          <p>信頼感のあるファーストビューと、会員向け情報にすぐ届く導線を両立した構成です。</p>
+          <p>公開情報と会員向け導線を、見やすく整理した構成です。</p>
         </div>
 
         <div class="card-grid card-grid-3">
@@ -93,8 +92,8 @@
             <span class="card-label">学会概要</span>
             <h3>医療従事者と研究者をつなぐ情報ハブ</h3>
             <p>
-              学術集会、研究会、資料配布、会員向けお知らせを一元的に整理し、
-              医療系学会サイトらしい整然さと閲覧性を重視しています。
+              学術集会、資料配布、会員向け案内を整理し、
+              医療系サイトらしい整然さを意識した見せ方です。
             </p>
             <dl class="mini-stats">
               <div>
@@ -116,8 +115,8 @@
             <span class="card-label">会員向け案内</span>
             <h3>会員専用サイトへの導線を明確化</h3>
             <p>
-              トップページからログインへ迷わず移動できるよう、
-              主要CTAと会員向けコンテンツを近い位置に配置しています。
+              トップページからログインへ進みやすいよう、
+              主要導線を上部にまとめています。
             </p>
             <ul class="feature-list">
               <li>会員限定資料の閲覧</li>
@@ -151,73 +150,63 @@
     <section class="section section-alt" id="features">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Implementation View</p>
-          <h2>対応イメージ / 想定機能</h2>
-          <p>営業資料のように重くしすぎず、案件理解が自然に伝わるようカードで整理しています。</p>
+          <p class="eyebrow">View</p>
+          <h2>対応イメージ</h2>
+          <p>補足が必要な場合だけ開ける形にしています。</p>
         </div>
 
-        <div class="card-grid card-grid-4">
-          <article class="card feature-card">
-            <span class="icon-badge">01</span>
-            <h3>外部認証API連携を想定</h3>
-            <p>ログイン画面から外部認証基盤へ接続し、結果に応じて会員向け導線へ遷移する設計をイメージしています。</p>
-          </article>
+        <details class="card fold-card">
+          <summary>対応イメージを開く</summary>
+          <div class="fold-body card-grid card-grid-4">
+            <article class="card feature-card">
+              <span class="icon-badge">01</span>
+              <h3>外部認証導線</h3>
+              <p>ログイン画面から会員ページへ進む流れを整理しています。</p>
+            </article>
 
-          <article class="card feature-card">
-            <span class="icon-badge">02</span>
-            <h3>会員専用ページの閲覧制御</h3>
-            <p><code>/member/</code> 配下に保護ページを集約し、未ログイン時はログイン画面へ戻す構成を想定しています。</p>
-          </article>
+            <article class="card feature-card">
+              <span class="icon-badge">02</span>
+              <h3>閲覧制御</h3>
+              <p>会員専用ページの保護された雰囲気を表現しています。</p>
+            </article>
 
-          <article class="card feature-card">
-            <span class="icon-badge">03</span>
-            <h3>セッション管理の導線設計</h3>
-            <p>ログイン後の状態保持、会員名表示、ログアウト導線までを見える形で配置し、会員制サイトらしい操作感を出しています。</p>
-          </article>
+            <article class="card feature-card">
+              <span class="icon-badge">03</span>
+              <h3>状態表示</h3>
+              <p>ログイン中の表示やログアウト導線を簡潔に配置しています。</p>
+            </article>
 
-          <article class="card feature-card">
-            <span class="icon-badge">04</span>
-            <h3>WordPress組み込み想定</h3>
-            <p>テンプレート化しやすい情報ブロックで構成し、ログイン画面HTML支給やテーマ組み込みのイメージを持ちやすくしています。</p>
-          </article>
-        </div>
+            <article class="card feature-card">
+              <span class="icon-badge">04</span>
+              <h3>組み込みやすさ</h3>
+              <p>静的構成で確認しやすい画面設計にしています。</p>
+            </article>
+          </div>
+        </details>
       </div>
     </section>
 
     <section class="section">
       <div class="container split-panel">
         <div class="card">
-          <p class="eyebrow">Flow Design</p>
-          <h2>会員導線の想定フロー</h2>
-          <ol class="timeline">
-            <li>
-              <strong>公開トップで学会概要と会員導線を提示</strong>
-              <span>一般公開情報と会員向け情報を整理し、ログイン導線をファーストビュー内で案内します。</span>
-            </li>
-            <li>
-              <strong>ログイン画面で認証の入り口を明確化</strong>
-              <span>メールアドレスまたは会員番号で認証するUIを提示し、外部API連携を前提とした雰囲気を表現します。</span>
-            </li>
-            <li>
-              <strong>認証後は会員専用ページへ遷移</strong>
-              <span>会員向けお知らせや限定資料を一覧で見せ、保護されたページであることを視覚的に伝えます。</span>
-            </li>
-            <li>
-              <strong>ログアウトで未認証状態へ戻す</strong>
-              <span>セッション管理を想起できる自然な導線として、会員ページ上部にログアウトを配置しています。</span>
-            </li>
-          </ol>
+          <p class="eyebrow">Page Structure</p>
+          <h2>ページ構成</h2>
+          <ul class="feature-list">
+            <li>公開トップページ</li>
+            <li>会員ログインページ</li>
+            <li>会員専用ページ</li>
+          </ul>
         </div>
 
         <aside class="card soft-card cta-card">
           <p class="eyebrow">Member Access</p>
           <h2>提案デモを確認する</h2>
           <p>
-            ログイン画面から擬似ログインし、会員専用ページまでの遷移と閲覧制御の雰囲気を確認できます。
+            ログイン画面から会員ページまでの流れを確認できます。
           </p>
           <div class="stack-buttons">
             <a class="button button-primary" href="./login.html">ログイン画面を開く</a>
-            <a class="button button-outline" data-auth-cta href="./login.html">会員ページを見る</a>
+            <a class="button button-outline" data-auth-cta href="./login.html">会員ページへ</a>
           </div>
         </aside>
       </div>
@@ -227,8 +216,8 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
-        <strong>医療系学会サイト 認証導線デモ</strong>
-        <p>会員サイトの雰囲気・導線設計・案件理解を伝えるための提案用サンプルです。</p>
+        <strong>医療学会会員サイトデモ</strong>
+        <p>提案用のサンプルサイトです。</p>
       </div>
       <div class="footer-notes">
         <small>提案用サンプルサイトです。</small>

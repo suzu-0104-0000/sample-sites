@@ -15,7 +15,7 @@
       <a class="brand" href="./index.html" aria-label="トップページへ戻る">
         <span class="brand-mark">MS</span>
         <span class="brand-copy">
-          <strong>医療系学会ポータル提案デモ</strong>
+          <strong>医療学会会員サイトデモ</strong>
           <small>Member Login</small>
         </span>
       </a>
@@ -34,8 +34,7 @@
         <p class="eyebrow">Member Login</p>
         <h1>会員専用ページへのログイン</h1>
         <p class="lead narrow">
-          外部認証APIによる会員認証を想定したログイン画面の提案デモです。
-          応募時に「会員制サイトの導線理解」が伝わるよう、清潔感と視認性を重視して設計しています。
+          会員制サイトらしいログイン導線を、すっきり確認できる提案用サンプルです。
         </p>
       </div>
     </section>
@@ -44,9 +43,9 @@
       <div class="container login-layout">
         <div class="card form-card">
           <div class="form-header">
-            <span class="badge badge-soft">外部認証API連携を想定</span>
+            <span class="badge badge-soft">会員専用</span>
             <h2>会員ログイン</h2>
-            <p>メールアドレスまたは会員番号とパスワードで、会員専用ページへ進む想定です。</p>
+            <p>メールアドレスまたは会員番号でログインできます。</p>
           </div>
 
           <div class="inline-note success" data-login-banner hidden>
@@ -69,8 +68,8 @@
             </label>
 
             <div class="form-hint">
-              <p>※ 提案用デモのため、入力値の形式確認後にローカル保存で擬似ログインします。</p>
-              <p>※ 実際の外部API接続や本番認証処理は行いません。</p>
+              <p>※ デモのため、ブラウザ保存で擬似ログインします。</p>
+              <p>※ 本番の認証処理ではありません。</p>
             </div>
 
             <p class="form-error" data-form-error role="alert" aria-live="polite"></p>
@@ -80,38 +79,29 @@
         </div>
 
         <div class="stack-panel">
-          <article class="card soft-card">
-            <p class="eyebrow">Flow Assumption</p>
-            <h2>想定している認証フロー</h2>
-            <ol class="timeline compact">
-              <li>
-                <strong>1. ログイン情報を受け付け</strong>
-                <span>支給されたログイン画面HTMLをもとに、会員番号またはメールアドレス入力を受け付けるUIを想定。</span>
-              </li>
-              <li>
-                <strong>2. 外部認証APIへ連携</strong>
-                <span>Synergy! 等の外部システムと接続する想定で、認証結果に応じてセッションを発行する流れを表現。</span>
-              </li>
-              <li>
-                <strong>3. 会員専用ページを閲覧制御</strong>
-                <span><code>/member/</code> 直アクセス時にはログイン判定を行い、未認証ならログイン画面へ戻す想定です。</span>
-              </li>
-            </ol>
-          </article>
-
           <article class="card">
-            <p class="eyebrow">Implementation Points</p>
-            <h2>提案時に伝えたい実装観点</h2>
+            <p class="eyebrow">Demo</p>
+            <h2>確認ポイント</h2>
             <ul class="feature-list">
-              <li>医療系サイトらしい白×青の清潔感あるUI</li>
-              <li>会員サイトであることが一目で伝わる余白設計</li>
-              <li>入力欄と注意書きの視認性を高めたスマホ対応レイアウト</li>
-              <li>WordPress組み込みを想起しやすいシンプルな静的構成</li>
+              <li>会員ログインの入り口が分かりやすいこと</li>
+              <li>入力欄とボタンが見やすいこと</li>
+              <li>ログイン後に会員ページへ進めること</li>
             </ul>
+
+            <details class="fold-card">
+              <summary>補足を見る</summary>
+              <div class="fold-body">
+                <ul class="feature-list">
+                  <li>外部認証連携を想起させる画面構成</li>
+                  <li><code>/member/</code> への導線確認</li>
+                  <li>静的構成で確認しやすいUI</li>
+                </ul>
+              </div>
+            </details>
 
             <div class="stack-buttons top-gap">
               <a class="button button-outline" href="./index.html">トップページへ戻る</a>
-              <a class="button button-outline" href="./member/">会員専用ページを見る</a>
+              <a class="button button-outline" href="./member/">会員ページを見る</a>
             </div>
           </article>
         </div>
@@ -123,7 +113,7 @@
     <div class="container footer-inner">
       <div>
         <strong>会員ログイン デモ画面</strong>
-        <p>外部認証連携案件を想起しやすい、提案用のログインUIサンプルです。</p>
+        <p>提案用のログイン画面サンプルです。</p>
       </div>
       <div class="footer-notes">
         <small>提案用サンプルサイトです。</small>

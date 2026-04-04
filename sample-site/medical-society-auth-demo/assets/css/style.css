@@ -98,28 +98,29 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  min-height: 78px;
+  gap: 14px;
+  min-height: 64px;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   min-width: 0;
 }
 
 .brand-mark {
   display: inline-grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
   background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
   color: #fff;
   font-weight: 800;
+  font-size: 0.84rem;
   letter-spacing: 0.06em;
-  box-shadow: 0 12px 24px rgba(21, 101, 172, 0.24);
+  box-shadow: 0 10px 18px rgba(21, 101, 172, 0.2);
 }
 
 .brand-copy {
@@ -133,12 +134,13 @@ code {
 }
 
 .brand-copy strong {
-  font-size: 0.98rem;
+  font-size: 0.9rem;
+  line-height: 1.2;
 }
 
 .brand-copy small {
   color: var(--text-soft);
-  font-size: 0.78rem;
+  font-size: 0.7rem;
 }
 
 .site-header-dark .brand-copy small,
@@ -149,12 +151,12 @@ code {
 .site-nav {
   display: inline-flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 .site-nav a {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   color: var(--text-soft);
 }
 
@@ -168,11 +170,12 @@ code {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  min-height: 48px;
-  padding: 0 20px;
+  min-height: 42px;
+  padding: 0 16px;
   border-radius: 999px;
   border: 1px solid transparent;
   font-weight: 700;
+  font-size: 0.92rem;
   transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
 }
 
@@ -182,9 +185,9 @@ code {
 }
 
 .button-sm {
-  min-height: 42px;
-  padding-inline: 16px;
-  font-size: 0.92rem;
+  min-height: 34px;
+  padding-inline: 12px;
+  font-size: 0.82rem;
 }
 
 .button-block {
@@ -543,6 +546,36 @@ p {
   color: var(--text-soft);
 }
 
+.fold-card {
+  margin-top: 18px;
+  border-top: 1px solid rgba(216, 228, 239, 0.9);
+  padding-top: 16px;
+}
+
+.fold-card summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--primary-dark);
+  list-style: none;
+}
+
+.fold-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.fold-card summary::after {
+  content: "＋";
+  margin-left: 8px;
+}
+
+.fold-card[open] summary::after {
+  content: "−";
+}
+
+.fold-body {
+  margin-top: 14px;
+}
+
 .split-panel {
   grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr);
   align-items: stretch;
@@ -725,7 +758,7 @@ p {
   }
 
   .header-inner {
-    min-height: 72px;
+    min-height: 60px;
   }
 }
 
@@ -751,9 +784,14 @@ p {
     border-radius: 22px;
   }
 
-  .button,
-  .button-sm {
+  .hero-actions .button,
+  .stack-buttons .button,
+  .button-block {
     width: 100%;
+  }
+
+  .header-inner .button {
+    width: auto;
   }
 
   .hero-actions,

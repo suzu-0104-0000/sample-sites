@@ -15,8 +15,8 @@
       <a class="brand" href="../index.html" aria-label="トップページへ戻る">
         <span class="brand-mark">MS</span>
         <span class="brand-copy">
-          <strong>会員専用ポータル</strong>
-          <small>Protected Member Area</small>
+          <strong>医療学会会員サイトデモ</strong>
+          <small>Member Area</small>
         </span>
       </a>
 
@@ -33,12 +33,11 @@
     <section class="member-hero">
       <div class="container member-hero-grid">
         <div>
-          <p class="eyebrow">Members Only</p>
-          <h1>会員専用ページ</h1>
-          <p class="lead narrow">
-            ログイン後の保護ページを想定した提案デモです。
-            会員向けのお知らせ、学術集会情報、資料導線をまとめて確認できる構成にしています。
-          </p>
+        <p class="eyebrow">Members Only</p>
+        <h1>会員専用ページ</h1>
+        <p class="lead narrow">
+          ログイン後に閲覧できる会員専用ページの雰囲気を確認できるサンプルです。
+        </p>
 
           <div class="session-row">
             <span class="badge badge-success">保護されたページ</span>
@@ -48,14 +47,10 @@
         </div>
 
         <aside class="card dark-panel">
-          <p class="eyebrow">Session Summary</p>
-          <h2>閲覧制御の見せ方</h2>
-          <ul class="feature-list feature-list-light">
-            <li>未ログイン時の直接アクセスはログイン画面へ戻す</li>
-            <li>ログイン後は会員情報をヘッダーと本文に反映</li>
-            <li>ログアウトで未認証状態へ戻す自然な導線設計</li>
-          </ul>
-          <p class="panel-caption">このページの認証状態は <span data-auth-mode>デモセッション</span> として表示しています。</p>
+          <p class="eyebrow">Session</p>
+          <h2>会員ステータス</h2>
+          <p>ログイン中の状態を、シンプルに確認できる表示にしています。</p>
+          <p class="panel-caption">現在の状態: <span data-auth-mode>デモセッション</span></p>
         </aside>
       </div>
     </section>
@@ -94,13 +89,11 @@
                 <span class="card-label">年次学術集会</span>
                 <h3>第24回 学術集会</h3>
                 <p>会期: 2026年11月14日〜15日 / 会場: 東京国際フォーラム（想定）</p>
-                <p class="muted">会員向けに抄録閲覧・参加案内・事務局連絡を掲載する想定です。</p>
               </div>
               <div class="sub-card">
                 <span class="card-label">教育セミナー</span>
                 <h3>春季オンラインセミナー</h3>
                 <p>最新の研究動向と会員向け教育コンテンツを整理して配信する想定です。</p>
-                <p class="muted">会員限定視聴URLや資料配布の導線が置かれるイメージです。</p>
               </div>
             </div>
           </article>
@@ -114,20 +107,20 @@
               <div class="download-card">
                 <span class="download-meta">PDF想定</span>
                 <h3>会員向け運用ガイド</h3>
-                <p>ログイン後の会員向け案内資料や利用方法を配布する体裁です。</p>
-                <button class="text-link" type="button">ダウンロード導線イメージ</button>
+                <p>会員向け案内資料の表示例です。</p>
+                <button class="text-link" type="button">表示例を見る</button>
               </div>
               <div class="download-card">
                 <span class="download-meta">PDF想定</span>
                 <h3>学術集会 参加案内</h3>
-                <p>会員限定の参加要項やスケジュールを閲覧できる想定です。</p>
-                <button class="text-link" type="button">資料閲覧の見せ方を見る</button>
+                <p>参加要項やスケジュールの表示例です。</p>
+                <button class="text-link" type="button">表示例を見る</button>
               </div>
               <div class="download-card">
                 <span class="download-meta">ZIP / 動画想定</span>
                 <h3>教育講演アーカイブ</h3>
-                <p>限定コンテンツへのアクセス導線をわかりやすく整理しています。</p>
-                <button class="text-link" type="button">限定コンテンツ導線を確認</button>
+                <p>限定コンテンツ導線の表示例です。</p>
+                <button class="text-link" type="button">表示例を見る</button>
               </div>
             </div>
           </article>
@@ -147,12 +140,17 @@
 
           <article class="card soft-card">
             <p class="eyebrow">Demo Note</p>
-            <h2>このページの前提</h2>
-            <p class="muted">
-              本ページは提案用サンプルのため、認証状態はブラウザのローカル保存で管理しています。
-              実際のAPI認証や本番セキュリティ実装は含みません。
-            </p>
-            <button class="button button-outline button-block top-gap" type="button" data-logout data-logout-target="../login.html">ログアウトして確認する</button>
+            <h2>補足</h2>
+            <details class="fold-card">
+              <summary>補足を見る</summary>
+              <div class="fold-body">
+                <p class="muted">
+                  このページは提案用サンプルです。認証状態はブラウザ保存で管理しており、
+                  本番のAPI認証や本格的なアクセス制御は含みません。
+                </p>
+              </div>
+            </details>
+            <button class="button button-outline button-block top-gap" type="button" data-logout data-logout-target="../login.html">ログアウトする</button>
           </article>
         </aside>
       </div>
@@ -163,7 +161,7 @@
     <div class="container footer-inner">
       <div>
         <strong>会員専用ページ デモ</strong>
-        <p>閲覧制御・会員コンテンツ・ログアウト導線の理解を伝えるための提案用サンプルです。</p>
+        <p>提案用の会員ページサンプルです。</p>
       </div>
       <div class="footer-notes">
         <small>提案用サンプルサイトです。</small>

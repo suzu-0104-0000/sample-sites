@@ -26,7 +26,7 @@ function updateAuthCtas(auth) {
 
   document.querySelectorAll("[data-auth-cta]").forEach(function (element) {
     element.setAttribute("href", loggedIn ? "./member/" : "./login.html");
-    element.textContent = loggedIn ? "会員専用ページを開く" : "会員専用ページはこちら";
+    element.textContent = loggedIn ? "会員ページを開く" : "会員ページへ";
   });
 
   document.querySelectorAll("[data-auth-status]").forEach(function (element) {
