@@ -1,0 +1,28 @@
+{
+  "project_name": "医療系学会サイト 認証導線デモ",
+  "slug": "medical-society-auth-demo",
+  "created_at": "2026-04-04",
+  "purpose": "クラウドワークス応募時に提示するための、医療系学会サイト向け提案用サンプルサイト。会員ログイン導線と会員専用ページの雰囲気を静的構成で表現する。",
+  "pages": [
+    {
+      "title": "トップページ",
+      "path": "sample-site/medical-society-auth-demo/index.html"
+    },
+    {
+      "title": "ログインページ",
+      "path": "sample-site/medical-society-auth-demo/login.html"
+    },
+    {
+      "title": "会員専用ページ",
+      "path": "sample-site/medical-society-auth-demo/member/index.html"
+    }
+  ],
+  "notes": [
+    "提案用サンプルサイトです。",
+    "認証処理はデモ用の簡易実装です。",
+    "外部認証API連携やWordPress組み込みは想定表現のみで、本実装は含みません。",
+    "既存サンプルを壊さないよう、新規slug配下へ追加しています。"
+  ],
+  "stack": "static-html-css-js",
+  "public_path": "/medical-society-auth-demo/"
+}

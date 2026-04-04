@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>会員専用ページ | 医療系学会サイト 認証導線デモ</title>
+  <meta name="description" content="医療系学会サイト向け提案用サンプルの会員専用ページです。擬似ログイン後の閲覧制御と会員向け情報の雰囲気を確認できます。">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/auth.js" defer></script>
+  <script src="../assets/js/app.js" defer></script>
+</head>
+<body class="auth-pending protected-page" data-page="member" data-requires-auth="true">
+  <header class="site-header site-header-dark">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="トップページへ戻る">
+        <span class="brand-mark">MS</span>
+        <span class="brand-copy">
+          <strong>会員専用ポータル</strong>
+          <small>Protected Member Area</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="グローバルナビゲーション">
+        <a href="../index.html">公開トップ</a>
+        <a href="../login.html">ログイン画面</a>
+      </nav>
+
+      <button class="button button-secondary button-sm" type="button" data-logout data-logout-target="../login.html">ログアウト</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="member-hero">
+      <div class="container member-hero-grid">
+        <div>
+          <p class="eyebrow">Members Only</p>
+          <h1>会員専用ページ</h1>
+          <p class="lead narrow">
+            ログイン後の保護ページを想定した提案デモです。
+            会員向けのお知らせ、学術集会情報、資料導線をまとめて確認できる構成にしています。
+          </p>
+
+          <div class="session-row">
+            <span class="badge badge-success">保護されたページ</span>
+            <span class="session-text">ログイン中: <strong data-user-label>会員</strong></span>
+            <span class="session-text">認証日時: <strong data-login-time>--</strong></span>
+          </div>
+        </div>
+
+        <aside class="card dark-panel">
+          <p class="eyebrow">Session Summary</p>
+          <h2>閲覧制御の見せ方</h2>
+          <ul class="feature-list feature-list-light">
+            <li>未ログイン時の直接アクセスはログイン画面へ戻す</li>
+            <li>ログイン後は会員情報をヘッダーと本文に反映</li>
+            <li>ログアウトで未認証状態へ戻す自然な導線設計</li>
+          </ul>
+          <p class="panel-caption">このページの認証状態は <span data-auth-mode>デモセッション</span> として表示しています。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container member-layout">
+        <div class="content-stack">
+          <article class="card">
+            <div class="section-heading section-heading-left">
+              <p class="eyebrow">Member Notice</p>
+              <h2>会員向けお知らせ</h2>
+            </div>
+            <ul class="notice-list">
+              <li>
+                <strong>2026.06.15</strong>
+                <span>第24回学術集会の参加登録ページを更新しました。</span>
+              </li>
+              <li>
+                <strong>2026.06.03</strong>
+                <span>教育講演アーカイブ資料を会員専用ページで公開予定です。</span>
+              </li>
+              <li>
+                <strong>2026.05.21</strong>
+                <span>年会費および登録情報確認の案内を事務局より掲載しました。</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="section-heading section-heading-left">
+              <p class="eyebrow">Conference</p>
+              <h2>学術集会・セミナー情報</h2>
+            </div>
+            <div class="card-grid card-grid-2">
+              <div class="sub-card">
+                <span class="card-label">年次学術集会</span>
+                <h3>第24回 学術集会</h3>
+                <p>会期: 2026年11月14日〜15日 / 会場: 東京国際フォーラム（想定）</p>
+                <p class="muted">会員向けに抄録閲覧・参加案内・事務局連絡を掲載する想定です。</p>
+              </div>
+              <div class="sub-card">
+                <span class="card-label">教育セミナー</span>
+                <h3>春季オンラインセミナー</h3>
+                <p>最新の研究動向と会員向け教育コンテンツを整理して配信する想定です。</p>
+                <p class="muted">会員限定視聴URLや資料配布の導線が置かれるイメージです。</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="section-heading section-heading-left">
+              <p class="eyebrow">Downloads</p>
+              <h2>資料ダウンロード風カード</h2>
+            </div>
+            <div class="card-grid card-grid-3">
+              <div class="download-card">
+                <span class="download-meta">PDF想定</span>
+                <h3>会員向け運用ガイド</h3>
+                <p>ログイン後の会員向け案内資料や利用方法を配布する体裁です。</p>
+                <button class="text-link" type="button">ダウンロード導線イメージ</button>
+              </div>
+              <div class="download-card">
+                <span class="download-meta">PDF想定</span>
+                <h3>学術集会 参加案内</h3>
+                <p>会員限定の参加要項やスケジュールを閲覧できる想定です。</p>
+                <button class="text-link" type="button">資料閲覧の見せ方を見る</button>
+              </div>
+              <div class="download-card">
+                <span class="download-meta">ZIP / 動画想定</span>
+                <h3>教育講演アーカイブ</h3>
+                <p>限定コンテンツへのアクセス導線をわかりやすく整理しています。</p>
+                <button class="text-link" type="button">限定コンテンツ導線を確認</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <aside class="sidebar-stack">
+          <article class="card soft-card">
+            <p class="eyebrow">Protected Content</p>
+            <h2>限定コンテンツ一覧</h2>
+            <ul class="feature-list">
+              <li>講演資料アーカイブ</li>
+              <li>委員会向け連絡掲示</li>
+              <li>会員登録情報の確認導線</li>
+              <li>オンラインセミナー資料</li>
+            </ul>
+          </article>
+
+          <article class="card soft-card">
+            <p class="eyebrow">Demo Note</p>
+            <h2>このページの前提</h2>
+            <p class="muted">
+              本ページは提案用サンプルのため、認証状態はブラウザのローカル保存で管理しています。
+              実際のAPI認証や本番セキュリティ実装は含みません。
+            </p>
+            <button class="button button-outline button-block top-gap" type="button" data-logout data-logout-target="../login.html">ログアウトして確認する</button>
+          </article>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer site-footer-dark">
+    <div class="container footer-inner">
+      <div>
+        <strong>会員専用ページ デモ</strong>
+        <p>閲覧制御・会員コンテンツ・ログアウト導線の理解を伝えるための提案用サンプルです。</p>
+      </div>
+      <div class="footer-notes">
+        <small>提案用サンプルサイトです。</small>
+        <small>認証処理はデモ用の簡易実装です。</small>
+        <small>本番のアクセス制御やAPI連携ではありません。</small>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
