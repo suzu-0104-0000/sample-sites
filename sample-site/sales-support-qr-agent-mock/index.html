@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QR Agent Sales Hub | 販売支援アプリ提案モック</title>
+  <meta name="description" content="QRコード営業、紹介店舗管理、注文管理、報酬管理を整理した販売支援アプリの提案用静的モックサイトです。">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="トップページへ">
+        <span class="brand-mark">Q</span>
+        <span class="brand-text">
+          <strong>QR Agent Sales Hub</strong>
+          <span>販売支援アプリ 提案用モック</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="メニューを開く">≡</button>
+      <nav class="site-nav" data-site-nav aria-label="主要ナビゲーション">
+        <a href="index.html" data-nav="home">概要</a>
+        <a href="screens.html" data-nav="screens">画面モック</a>
+        <a href="flow.html" data-nav="flow">業務フロー</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="hero">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">Proposal Mock / Static Site</p>
+          <h1>QR営業から注文・報酬までをまとめて見せる販売支援アプリ案</h1>
+          <p class="lead">
+            代理店・エージェントが個別QRで店舗を紹介し、注文売上と報酬が継続的に紐づく仕組みを、提案時に説明しやすい静的モックとして整理しています。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="screens.html">画面モックを見る</a>
+            <a class="button button-secondary" href="flow.html">紹介フローを見る</a>
+          </div>
+          <p class="note">このサイトは提案用サンプルモックです。実際の注文・報酬計算・API連携は行われません。</p>
+        </div>
+
+        <div class="mock-window" aria-label="管理ダッシュボード風モック">
+          <div class="mock-toolbar">
+            <div class="dot-group"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <span class="mock-title">Admin Dashboard / Sample</span>
+          </div>
+          <div class="mock-body">
+            <div class="dashboard-grid">
+              <aside class="sidebar">
+                <span class="active">ダッシュボード</span>
+                <span>エージェント</span>
+                <span>店舗</span>
+                <span>注文</span>
+                <span>報酬管理</span>
+              </aside>
+              <div class="grid">
+                <div class="metric-grid">
+                  <div class="metric-card"><span>総売上</span><strong>¥3.2M</strong><small>+18%</small></div>
+                  <div class="metric-card"><span>注文数</span><strong>128</strong><small>今月</small></div>
+                  <div class="metric-card"><span>登録店舗</span><strong>46</strong><small>12増</small></div>
+                  <div class="metric-card"><span>確定報酬</span><strong>¥320K</strong><small>月次</small></div>
+                </div>
+                <div class="mini-chart" aria-label="売上推移グラフ風UI">
+                  <span class="bar" style="height: 42%"></span>
+                  <span class="bar" style="height: 58%"></span>
+                  <span class="bar green" style="height: 74%"></span>
+                  <span class="bar" style="height: 52%"></span>
+                  <span class="bar green" style="height: 86%"></span>
+                  <span class="bar" style="height: 68%"></span>
+                  <span class="bar green" style="height: 92%"></span>
+                </div>
+                <div class="table-wrap">
+                  <table class="data-table">
+                    <thead>
+                      <tr><th>注文</th><th>店舗</th><th>Agent ID</th><th>状態</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>#ORD-1042</td><td>サンプル居酒屋 新宿店</td><td>AGT-0821</td><td><span class="status active">納品準備中</span></td></tr>
+                      <tr><td>#ORD-1041</td><td>バー青山</td><td>AGT-0310</td><td><span class="status done">完了</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Three Roles</p>
+            <h2>管理者・エージェント・店舗の役割を分けて設計</h2>
+          </div>
+          <p>誰が何を操作し、どの情報が報酬に紐づくかを先に整理することで、要件定義と画面設計の前提を揃えます。</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card">
+            <span class="role-icon">管</span>
+            <h3>管理者</h3>
+            <p>エージェント、店舗、注文、報酬を横断管理。月次確定と出力の操作を担当します。</p>
+            <div class="badge-row"><span class="badge">注文集約</span><span class="badge">報酬確定</span><span class="badge">KPI確認</span></div>
+          </article>
+          <article class="card">
+            <span class="role-icon green">営</span>
+            <h3>代理店・エージェント</h3>
+            <p>個別ID付きQRや紹介URLを配布し、紹介店舗、売上、報酬見込みをマイページで確認します。</p>
+            <div class="badge-row"><span class="badge">QR配布</span><span class="badge">店舗紹介</span><span class="badge">報酬確認</span></div>
+          </article>
+          <article class="card">
+            <span class="role-icon amber">店</span>
+            <h3>店舗</h3>
+            <p>QRから登録し、紹介エージェントと初回登録時に紐付け。商品閲覧後に注文へ進みます。</p>
+            <div class="badge-row"><span class="badge">店舗登録</span><span class="badge">商品閲覧</span><span class="badge">注文履歴</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">QR Sales Model</p>
+            <h2>QRコード営業からストック型報酬までの全体像</h2>
+          </div>
+          <p>エージェントIDは店舗登録時に固定され、以降の注文売上を参照して報酬管理へつなげる想定です。</p>
+        </div>
+        <div class="workflow">
+          <article class="flow-card">
+            <span class="flow-number">1</span>
+            <strong>エージェント登録</strong>
+            <p>招待URLまたはQRから登録。固有IDを採番する想定です。</p>
+          </article>
+          <article class="flow-card">
+            <span class="flow-number">2</span>
+            <strong>専用QRを配布</strong>
+            <p>Agent ID入りURLを営業、SNS、対面提案で共有します。</p>
+          </article>
+          <article class="flow-card">
+            <span class="flow-number">3</span>
+            <strong>店舗登録で紐付け</strong>
+            <p>店舗とエージェントIDを初回登録時に確定します。</p>
+          </article>
+          <article class="flow-card">
+            <span class="flow-number">4</span>
+            <strong>注文・報酬集計</strong>
+            <p>注文ごとにIDを参照し、売上と報酬見込みを更新します。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2">
+          <div class="callout">
+            <strong>営業支援の想定</strong>
+            <p>Google Places API連携は「エリア・業種別の候補店舗検索」として設計対象に含めますが、このモックでは外部API通信を行いません。</p>
+          </div>
+          <div class="callout">
+            <strong>報酬設計の想定</strong>
+            <p>売上 × 報酬率で月次確定する見せ方のみ配置しています。実際の計算処理や出力機能は実装していません。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>このサイトは提案用サンプルモックです。実際の注文・報酬計算・API連携は行われません。</p>
+      <p>QR Agent Sales Hub / Static Mock</p>
+    </div>
+  </footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

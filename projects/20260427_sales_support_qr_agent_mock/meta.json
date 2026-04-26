@@ -1,0 +1,28 @@
+{
+  "project_name": "販売支援アプリ QRエージェント管理モック",
+  "slug": "sales-support-qr-agent-mock",
+  "created_at": "2026-04-27",
+  "purpose": "クラウドワークス応募時に提示するための、QRコード営業・紹介店舗管理・注文管理・報酬管理を整理した販売支援アプリ提案用サンプルサイト。",
+  "target_case": "代理店・エージェントによる営業活動をQRコードで簡略化し、紹介店舗、注文、売上、報酬を管理する販売支援アプリの要望ヒアリング、要件定義、仕様設計、動作検証案件。",
+  "pages": [
+    {
+      "title": "トップページ",
+      "path": "sample-site/sales-support-qr-agent-mock/index.html"
+    },
+    {
+      "title": "画面モック一覧ページ",
+      "path": "sample-site/sales-support-qr-agent-mock/screens.html"
+    },
+    {
+      "title": "フロー説明ページ",
+      "path": "sample-site/sales-support-qr-agent-mock/flow.html"
+    }
+  ],
+  "notes": [
+    "提案用サンプルモックです。",
+    "実際のログイン、QR生成、注文処理、報酬計算、外部API連携は行いません。",
+    "管理者、エージェント、店舗の3者構造を静的UIで表現しています。",
+    "Cloudflare Pagesでは sample-site を公開ルートにする既存運用を前提としています。",
+    "公開パスは /sales-support-qr-agent-mock/ です。"
+  ]
+}

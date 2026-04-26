@@ -17,6 +17,8 @@
 
 ## 現在の公開サンプル
 - `/basketball-association/`
+- `/medical-society-auth-demo/`
+- `/sales-support-qr-agent-mock/`
 
 ## 補足
 - サイト本体は静的 HTML / CSS / JavaScript で構成

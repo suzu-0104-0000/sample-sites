@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>業務フロー | QR Agent Sales Hub</title>
+  <meta name="description" content="QRコード営業から店舗登録、注文、報酬計算、月次確定までの販売支援アプリ業務フローです。">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="flow">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="トップページへ">
+        <span class="brand-mark">Q</span>
+        <span class="brand-text">
+          <strong>QR Agent Sales Hub</strong>
+          <span>販売支援アプリ 提案用モック</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="メニューを開く">≡</button>
+      <nav class="site-nav" data-site-nav aria-label="主要ナビゲーション">
+        <a href="index.html" data-nav="home">概要</a>
+        <a href="screens.html" data-nav="screens">画面モック</a>
+        <a href="flow.html" data-nav="flow">業務フロー</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-copy">
+          <p class="eyebrow">Business Flow</p>
+          <h1>エージェントIDを軸に売上と報酬をつなぐ設計フロー</h1>
+          <p class="lead">登録、紐付け、注文、管理確認、報酬確定までを、要件定義時に確認しやすい順序で整理しています。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Step Map</p>
+            <h2>最小構成で優先する9ステップ</h2>
+          </div>
+          <p>各ステップは画面設計上の見せ方であり、このサンプルでは実際の登録・注文・計算処理は実行しません。</p>
+        </div>
+
+        <div class="workflow">
+          <article class="flow-card">
+            <span class="flow-number">1</span>
+            <strong>エージェント登録</strong>
+            <p>招待URLやQRから登録する想定。登録後に固有のAgent IDを採番します。</p>
+            <span class="status active">ID発行対象</span>
+          </article>
+          <article class="flow-card">
+            <span class="flow-number">2</span>
+            <strong>QRコード発行</strong>
+            <p>Agent IDを含む紹介URLをQR化し、対面営業やSNSで共有します。</p>
+            <span class="status pending">ダミー表示</span>
+          </article>
+          <article class="flow-card">
+            <span class="flow-number">3</span>
+            <strong>店舗登録</strong>
+            <p>店舗がQRから登録し、店舗名、業種、エリアなどの情報を入力する想定です。</p>
+            <span class="status active">登録導線</span>
+          </article>
+          <article class="flow-card">
+            <span class="flow-number">4</span>
+            <strong>ID紐付け確定</strong>
+            <p>店舗とAgent IDの紐付けを初回登録時に確定し、以降変更不可にします。</p>
+            <span class="status locked">変更不可</span>
+          </article>
+          <article class="flow-card">
+            <span class="flow-number">5</span>
+            <strong>商品閲覧</strong>
+            <p>酒類の商品説明、キャンペーン、注文条件を店舗向け画面に表示します。</p>
+            <span class="status active">商品説明</span>
+          </article>
+          <article class="flow-card">
+            <span class="flow-number">6</span>
+            <strong>注文</strong>
+            <p>店舗が注文フォーム風UIから注文内容を確認。実処理は本番側で設計します。</p>
+            <span class="status pending">送信不可</span>
+          </article>
+          <article class="flow-card">
+            <span class="flow-number">7</span>
+            <strong>管理者確認</strong>
+            <p>注文情報を管理者側に集約し、本部または酒販業者が販売・納品対応します。</p>
+            <span class="status active">注文管理</span>
+          </article>
+          <article class="flow-card">
+            <span class="flow-number">8</span>
+            <strong>報酬計算</strong>
+            <p>注文ごとにAgent IDを参照し、売上と報酬率から報酬見込みを表示します。</p>
+            <span class="status pending">計算風UI</span>
+          </article>
+          <article class="flow-card">
+            <span class="flow-number">9</span>
+            <strong>月次確定</strong>
+            <p>月末に報酬額を確定し、出力・支払確認へ進む想定の管理UIです。</p>
+            <span class="status done">月次処理</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Design Notes</p>
+            <h2>仕様設計時に確認する論点</h2>
+          </div>
+          <p>本番開発では、固定すべき仕様と後から変更できる運用項目を分けて整理します。</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card">
+            <span class="role-icon">ID</span>
+            <h3>Agent IDの固定条件</h3>
+            <p>店舗登録後の紐付け変更不可、重複登録、紹介URLの再発行条件を要件化します。</p>
+          </article>
+          <article class="card">
+            <span class="role-icon green">率</span>
+            <h3>報酬率と月次確定</h3>
+            <p>商品別・代理店別の報酬率、確定前修正、支払対象月の扱いを確認します。</p>
+          </article>
+          <article class="card">
+            <span class="role-icon amber">外</span>
+            <h3>外部API連携範囲</h3>
+            <p>Google Places APIは候補店舗検索の想定表現のみ。実連携は別途APIキーと利用条件を確認します。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="mock-window">
+          <div class="mock-toolbar">
+            <div class="dot-group"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <span class="mock-title">Reward Calculation / Sample Logic View</span>
+          </div>
+          <div class="mock-body">
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>注文ID</th>
+                    <th>店舗</th>
+                    <th>Agent ID</th>
+                    <th>売上</th>
+                    <th>報酬率</th>
+                    <th>報酬見込み</th>
+                    <th>月次状態</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#ORD-1042</td>
+                    <td>サンプル居酒屋 新宿店</td>
+                    <td>AGT-0821</td>
+                    <td>¥320,000</td>
+                    <td>10%</td>
+                    <td>¥32,000</td>
+                    <td><span class="status pending">未確定</span></td>
+                  </tr>
+                  <tr>
+                    <td>#ORD-1041</td>
+                    <td>バー青山</td>
+                    <td>AGT-0310</td>
+                    <td>¥180,000</td>
+                    <td>10%</td>
+                    <td>¥18,000</td>
+                    <td><span class="status done">確定済み</span></td>
+                  </tr>
+                  <tr>
+                    <td>#ORD-1040</td>
+                    <td>渋谷レストラン</td>
+                    <td>AGT-0821</td>
+                    <td>¥220,000</td>
+                    <td>10%</td>
+                    <td>¥22,000</td>
+                    <td><span class="status active">確認中</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note">表示されている金額はすべてサンプルです。実際の報酬計算ロジックは実装していません。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>このサイトは提案用サンプルモックです。実際の注文・報酬計算・API連携は行われません。</p>
+      <p>QR Agent Sales Hub / Static Mock</p>
+    </div>
+  </footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>画面モック | QR Agent Sales Hub</title>
+  <meta name="description" content="販売支援アプリの管理者、エージェント、店舗向け画面モックです。">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="screens">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="トップページへ">
+        <span class="brand-mark">Q</span>
+        <span class="brand-text">
+          <strong>QR Agent Sales Hub</strong>
+          <span>販売支援アプリ 提案用モック</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="メニューを開く">≡</button>
+      <nav class="site-nav" data-site-nav aria-label="主要ナビゲーション">
+        <a href="index.html" data-nav="home">概要</a>
+        <a href="screens.html" data-nav="screens">画面モック</a>
+        <a href="flow.html" data-nav="flow">業務フロー</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-copy">
+          <p class="eyebrow">Screen Mockups</p>
+          <h1>3者それぞれの利用画面を静的モックで可視化</h1>
+          <p class="lead">管理者、エージェント、店舗の画面を分け、要件定義時に確認すべき情報単位と導線を整理しています。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" data-tab-group>
+        <div class="mock-tabs" aria-label="画面モック切り替え">
+          <button class="tab-button is-active" type="button" data-tab-target="admin">管理者画面</button>
+          <button class="tab-button" type="button" data-tab-target="agent">エージェント画面</button>
+          <button class="tab-button" type="button" data-tab-target="store">店舗画面</button>
+        </div>
+
+        <section class="mock-panel is-active" data-tab-panel="admin">
+          <div class="screen-layout">
+            <article class="card">
+              <span class="role-icon">管</span>
+              <h3>管理者画面モック</h3>
+              <p>売上、注文、登録店舗、報酬額を横断して確認し、月次確定へ進むための管理画面です。</p>
+              <div class="badge-row">
+                <span class="badge">エージェント管理</span>
+                <span class="badge">注文管理</span>
+                <span class="badge">月次報酬</span>
+              </div>
+            </article>
+
+            <div class="mock-window">
+              <div class="mock-toolbar">
+                <div class="dot-group"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                <span class="mock-title">Admin / Monthly Settlement</span>
+              </div>
+              <div class="mock-body grid">
+                <div class="metric-grid">
+                  <div class="metric-card"><span>総売上</span><strong>¥3,200,000</strong><small>対象月</small></div>
+                  <div class="metric-card"><span>注文数</span><strong>128</strong><small>受付済み含む</small></div>
+                  <div class="metric-card"><span>登録店舗数</span><strong>46</strong><small>紐付け済み</small></div>
+                  <div class="metric-card"><span>確定報酬額</span><strong>¥320,000</strong><small>10%</small></div>
+                </div>
+
+                <div class="grid grid-2">
+                  <div class="table-wrap">
+                    <table class="data-table">
+                      <thead>
+                        <tr><th>エージェント</th><th>紹介店舗</th><th>売上</th><th>報酬</th></tr>
+                      </thead>
+                      <tbody>
+                        <tr><td>山田エージェント</td><td>12</td><td>¥980,000</td><td>¥98,000</td></tr>
+                        <tr><td>佐藤パートナー</td><td>8</td><td>¥620,000</td><td>¥62,000</td></tr>
+                        <tr><td>新宿代理店</td><td>15</td><td>¥1,100,000</td><td>¥110,000</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="table-wrap">
+                    <table class="data-table">
+                      <thead>
+                        <tr><th>注文ID</th><th>店舗</th><th>状態</th><th>担当</th></tr>
+                      </thead>
+                      <tbody>
+                        <tr><td>#ORD-1042</td><td>サンプル居酒屋 新宿店</td><td><span class="status active">納品準備中</span></td><td>本部</td></tr>
+                        <tr><td>#ORD-1041</td><td>バー青山</td><td><span class="status done">完了</span></td><td>酒販業者</td></tr>
+                        <tr><td>#ORD-1040</td><td>渋谷レストラン</td><td><span class="status pending">受付済み</span></td><td>本部</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="callout">
+                  <strong>月次確定ボタン風UI</strong>
+                  <p>このボタンは見た目のみです。実際の報酬確定、CSV出力、支払処理は行いません。</p>
+                  <div class="hero-actions"><span class="button button-success">2026年4月分を確定（モック）</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mock-panel" data-tab-panel="agent">
+          <div class="screen-layout">
+            <article class="card">
+              <span class="role-icon green">営</span>
+              <h3>エージェントマイページ</h3>
+              <p>固有QR、紹介URL、紹介店舗一覧、売上合計、報酬見込み、営業進捗を確認する想定です。</p>
+              <div class="badge-row">
+                <span class="badge">QR営業</span>
+                <span class="badge">売上確認</span>
+                <span class="badge">報酬見込み</span>
+              </div>
+            </article>
+
+            <div class="mock-window">
+              <div class="mock-toolbar">
+                <div class="dot-group"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                <span class="mock-title">Agent My Page / AGT-0821</span>
+              </div>
+              <div class="mock-body grid">
+                <div class="grid grid-2">
+                  <div class="card">
+                    <div class="qr-box" aria-label="ダミーQRコード"><span>AGT-0821</span></div>
+                    <div class="copy-field"><span>https://sample.app/r/AGT-0821</span><strong>URL風</strong></div>
+                    <p class="note">QRコードはダミー表示です。実際のQR生成は行いません。</p>
+                  </div>
+                  <div class="grid">
+                    <div class="metric-grid">
+                      <div class="metric-card"><span>紹介店舗</span><strong>12</strong><small>固定済み</small></div>
+                      <div class="metric-card"><span>売上合計</span><strong>¥980K</strong><small>今月</small></div>
+                      <div class="metric-card"><span>報酬見込み</span><strong>¥98K</strong><small>10%</small></div>
+                      <div class="metric-card"><span>商談中</span><strong>7</strong><small>候補店舗</small></div>
+                    </div>
+                    <div class="mini-chart">
+                      <span class="bar green" style="height: 38%"></span>
+                      <span class="bar green" style="height: 50%"></span>
+                      <span class="bar" style="height: 62%"></span>
+                      <span class="bar green" style="height: 76%"></span>
+                      <span class="bar" style="height: 66%"></span>
+                      <span class="bar green" style="height: 86%"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="table-wrap">
+                  <table class="data-table">
+                    <thead>
+                      <tr><th>紹介店舗</th><th>エリア</th><th>初回登録</th><th>今月売上</th><th>状態</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>サンプル居酒屋 新宿店</td><td>新宿</td><td>2026/04/08</td><td>¥320,000</td><td><span class="status done">注文あり</span></td></tr>
+                      <tr><td>バー青山</td><td>渋谷</td><td>2026/04/11</td><td>¥180,000</td><td><span class="status active">提案中</span></td></tr>
+                      <tr><td>池袋レストラン</td><td>池袋</td><td>2026/04/16</td><td>¥0</td><td><span class="status pending">登録済み</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mock-panel" data-tab-panel="store">
+          <div class="screen-layout">
+            <article class="card">
+              <span class="role-icon amber">店</span>
+              <h3>店舗向け注文画面</h3>
+              <p>店舗登録後、紹介エージェント情報を表示し、商品説明と注文フォーム風UIへ進む想定です。</p>
+              <div class="badge-row">
+                <span class="badge">登録完了</span>
+                <span class="badge">商品閲覧</span>
+                <span class="badge">注文履歴</span>
+              </div>
+            </article>
+
+            <div class="mock-window">
+              <div class="mock-toolbar">
+                <div class="dot-group"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                <span class="mock-title">Store Order / Sample</span>
+              </div>
+              <div class="mock-body grid">
+                <div class="callout">
+                  <strong>店舗登録完了</strong>
+                  <p>サンプル居酒屋 新宿店は、紹介エージェント「山田エージェント（AGT-0821）」に紐付いています。この紐付けは初回登録時に確定する想定です。</p>
+                </div>
+
+                <div class="grid grid-2">
+                  <div class="product-list">
+                    <div class="product-item"><div><strong>クラフト日本酒 720ml</strong><br><span>飲食店向けおすすめ商品</span></div><strong>¥3,200</strong></div>
+                    <div class="product-item"><div><strong>業務用ワイン 6本セット</strong><br><span>初回提案セット</span></div><strong>¥18,000</strong></div>
+                    <div class="product-item"><div><strong>季節限定リキュール</strong><br><span>キャンペーン商品</span></div><strong>¥4,800</strong></div>
+                  </div>
+
+                  <div class="form-mock">
+                    <div class="field-grid">
+                      <div class="field"><label>店舗名</label><div class="input-like">サンプル居酒屋 新宿店</div></div>
+                      <div class="field"><label>数量</label><div class="input-like">6本</div></div>
+                      <div class="field"><label>納品希望</label><div class="input-like">翌週火曜</div></div>
+                      <div class="field"><label>注文状態</label><div class="input-like">確認待ち（モック）</div></div>
+                    </div>
+                    <span class="button button-primary">注文内容を確認（送信不可）</span>
+                    <p class="note">入力欄は表示用です。注文処理や個人情報送信は行いません。</p>
+                  </div>
+                </div>
+
+                <div class="table-wrap">
+                  <table class="data-table">
+                    <thead>
+                      <tr><th>注文日</th><th>商品</th><th>金額</th><th>状態</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>2026/04/20</td><td>クラフト日本酒 720ml</td><td>¥32,000</td><td><span class="status active">納品準備中</span></td></tr>
+                      <tr><td>2026/04/12</td><td>業務用ワイン 6本セット</td><td>¥54,000</td><td><span class="status done">完了</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>このサイトは提案用サンプルモックです。実際の注文・報酬計算・API連携は行われません。</p>
+      <p>QR Agent Sales Hub / Static Mock</p>
+    </div>
+  </footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
